@@ -8,13 +8,14 @@ create_router.use(cors());
 // const loggedIn = require("../middleware/middleware");
 
 create_router.route("/createprofile").post(async (req, res) => {
-  const { firstName, lastName, Gender, age, about } = req.body;
+  const { firstName, photo, lastName, Gender, age, about } = req.body;
   const { id: userId } = req.user;
 console.log(req.user);  
   console.log(req.body);
   const newProfile = new Profile({
     user: userId,
     firstName,
+    photo,
     lastName,
     Gender,
     age,

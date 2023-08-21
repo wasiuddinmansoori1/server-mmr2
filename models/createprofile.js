@@ -11,6 +11,11 @@ const createProfileSchema = new mongoose.Schema({
     min: 3,
     max: 255,
   },
+  photo: {
+    type: Buffer,
+    required: true,
+    contentType: String,
+  },
   lastName: {
     type: String,
     required: true,
