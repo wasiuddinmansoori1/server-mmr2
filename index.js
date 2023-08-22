@@ -4,7 +4,7 @@ const cors = require("cors");
 const env = require("dotenv");
 const moongose = require("mongoose");
 const bodyParser = require("body-parser");
-// const authValidation = require("./middleware/middleware");
+const authValidation = require("./middleware/middleware");
 
 // requiring Routes
 const userRoutes = require("./routes/user");
