@@ -4,7 +4,7 @@ const cors = require("cors");
 const env = require("dotenv");
 const moongose = require("mongoose");
 const bodyParser = require("body-parser");
-const authValidation = require("./middleware/middleware");
+// const authValidation = require("./middleware/middleware");
 
 // requiring Routes
 const userRoutes = require("./routes/user");
@@ -32,9 +32,9 @@ app.use(cors());
 
 //routes
 app.use("/user", userRoutes);
-app.use("/", authValidation, createRoutes);
-app.use("/", authValidation, preferenceRoutes);
-app.use("/", authValidation, dashboardRoutes);
+app.use("/", createRoutes);
+app.use("/", preferenceRoutes);
+app.use("/", dashboardRoutes);
 
 // listening to server
 const port = process.env.PORT || 8000;

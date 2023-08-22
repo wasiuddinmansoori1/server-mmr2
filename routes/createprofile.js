@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const Profile = require("../models/createprofile");
 create_router.use(bodyParser.json());
 create_router.use(cors());
-// const loggedIn = require("../middleware/middleware");
 
 create_router.route("/createprofile").post(async (req, res) => {
   const { firstName, photo, lastName, Gender, age, about } = req.body;
