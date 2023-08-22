@@ -25,7 +25,7 @@ create_router.route("/addpreference").post( async  (req, res) => {
   
     newPreference
       .save()
-      .then(() => res.json("Profile Created"))
+      .then((createdProfile) => res.json({ message: "Profile Created", newPreference: createdProfile }))
       .catch((err) => res.status(400).json("Error: " + err));
   });
   

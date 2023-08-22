@@ -22,7 +22,7 @@ create_router.route("/createprofile").post(async (req, res) => {
   });
   newProfile
     .save()
-    .then(() => res.json("Profile Created"))
+    .then((createdProfile) => res.json({ message: "Profile Created", newProfile: createdProfile }))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
