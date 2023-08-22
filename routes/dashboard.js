@@ -3,10 +3,9 @@ const router = express.Router();
 const Profile = require("../models/createprofile");
 const preference = require("../models/addpreference");
 
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard/:userId", async (req, res) => {
   console.log("USER", req.user);
-
-  const { id: userId } = req.user;
+  const { userId } = req.params;
   try {
     const preferences = await preference.find({ user: userId });
     // gender Logic started TODO: Need to complete the logic

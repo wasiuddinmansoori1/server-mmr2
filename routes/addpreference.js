@@ -11,8 +11,8 @@ create_router.use(cors());
 
 create_router.route("/addpreference").post( async  (req, res) => {
     // console.log(req.body);
-    const { genderPreference, accommodationType, preferredAge, topPreference } = req.body;
-    const { id: userId } = req.user;
+    const { genderPreference, accommodationType, preferredAge, topPreference, userId } = req.body;
+    // const { id: userId } = req.user;
   
     // console.log(req.body);
     const newPreference = new preference({

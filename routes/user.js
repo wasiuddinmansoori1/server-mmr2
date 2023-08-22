@@ -6,13 +6,13 @@ const jwt = require("jsonwebtoken");
 // const { loggedIn } = require("../middleware/middleware");
 
 // KEY
-const KEY  = process.env.SECRET_KEY;
+const KEY = process.env.SECRET_KEY;
 
 user_router.get("/", (req, res) => {
   res.send("hie");
 });
 
-user_router.post("/signup",  async (req, res) => {
+user_router.post("/signup", async (req, res) => {
   console.log(req.body);
   try {
     const existingUser = await User.findOne({ email: req.body.email });
@@ -26,7 +26,12 @@ user_router.post("/signup",  async (req, res) => {
       ...req.body,
       password: hashedpassword,
     });
-    res.status(200).send({ message: "User created successfully" });
+    res.status(200).send({
+      message: "User created successfully",
+      data: {
+        userId: newUser._id,
+      },
+    });
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: "Internal Server Error" });

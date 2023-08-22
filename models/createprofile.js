@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const createProfileSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Entering Information',
+    ref: "Entering Information",
   },
   firstName: {
     type: String,
@@ -13,7 +13,7 @@ const createProfileSchema = new mongoose.Schema({
   },
   photo: {
     type: Buffer,
-    required: true,
+    // required: true,
     contentType: String,
   },
   lastName: {
@@ -35,7 +35,6 @@ const createProfileSchema = new mongoose.Schema({
     required: true,
   },
 });
-
 
 const Profile = mongoose.model("Profile", createProfileSchema);
 module.exports = Profile;
