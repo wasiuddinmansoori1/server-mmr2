@@ -32,9 +32,9 @@ app.use(cors());
 
 //routes
 app.use("/user", userRoutes);
-app.use("/", createRoutes);
-app.use("/", preferenceRoutes);
-app.use("/", dashboardRoutes);
+app.use("/", authValidation, createRoutes);
+app.use("/", authValidation, preferenceRoutes);
+app.use("/", authValidation, dashboardRoutes);
 
 // listening to server
 const port = process.env.PORT || 8000;
