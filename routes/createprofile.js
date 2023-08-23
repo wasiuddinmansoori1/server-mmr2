@@ -7,7 +7,7 @@ create_router.use(bodyParser.json());
 create_router.use(cors());
 
 create_router.route("/createprofile").post(async (req, res) => {
-  const { firstName, photo, lastName, Gender, age, about, userId } = req.body;
+  const { firstName, photo, lastName, gender, age, about, userId } = req.body;
   // const userId = req.user ? req.user.id : null;
   // console.log(req.user);
   console.log(req.body);
@@ -16,7 +16,7 @@ create_router.route("/createprofile").post(async (req, res) => {
     firstName,
     photo,
     lastName,
-    Gender,
+    gender,
     age,
     about,
   });

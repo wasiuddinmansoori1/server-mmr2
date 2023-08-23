@@ -22,7 +22,7 @@ const createProfileSchema = new mongoose.Schema({
     min: 3,
     max: 255,
   },
-  Gender: {
+  gender: {
     type: String,
     required: true,
   },
