@@ -32,7 +32,7 @@ const createProfileSchema = new mongoose.Schema({
   },
   about: {
     type: String,
-    required: true,
+    // required: true,
   },
 });
 
