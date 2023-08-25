@@ -8,10 +8,11 @@ create_router.use(bodyParser.json());
 
 create_router.route("/createprofile").post(async (req, res) => {
   const { firstName, photo, lastName, gender, age, about, userId } = req.body;
+  const defaultphotoURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"
   const newProfile = new Profile({
     user: userId,
     firstName,
-    photo,
+    photo: photo || defaultphotoURL,
     lastName,
     gender,
     age,
