@@ -107,7 +107,6 @@ router.get("/dashboard/:userId", async (req, res) => {
     }
 
     res.json({ profiles });
-
   } catch (error) {
     console.log(error);
     return res
