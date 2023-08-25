@@ -106,7 +106,7 @@ router.get("/dashboard/:userId", async (req, res) => {
       }
     }
 
-    profiles = profiles.filter((profile) => profile.userId !== userId);
+    profiles = profiles.filter((profile) => profile.user !== userId);
 
     res.json({ profiles });
   } catch (error) {
