@@ -105,9 +105,9 @@ router.get("/dashboard/:userId", async (req, res) => {
         });
       }
     }
-    // console.log("profilesbefore", profiles);
+
     profiles = profiles.filter((profile) => profile.user.toString() !== userId);
-    // console.log("profiles", profiles);
+
     res.json({ profiles });
   } catch (error) {
     console.log(error);
